@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+float Megajoules(float kWh);
+float BTU(float kWh);
+float Calories(float kWh);
+int main() {
+    float kWh;
+    printf("Enter the power (in kWh): ");
+    scanf("%f", &kWh);
+    printf("Megajoules %.2f\n", Megajoules(kWh));
+    printf("BTU %.2f\n", BTU(kWh));
+    printf("Calories %.2f\n", Calories(kWh));
+
+    return 0;
+}
+float Megajoules(float kWh){
+    return kWh * 3.6;
+}
+float BTU(float kWh){
+    return kWh * 3412.14;
+}
+float Calories(float kWh){
+    return kWh * 859845;
+}
