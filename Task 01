@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+float triage(int severity, int age, int vitals);
+int main() {
+    float score;
+    int severity;
+    int age;
+    int vitals;
+    printf("Enter the severity of the patient: ");
+        scanf("%d", &severity);
+        printf("Enter the age of the patient: ");
+        scanf("%d", &age);
+        printf("Enter the vitals of the patient: ");
+        scanf("%d", &vitals);
+    float result = triage(severity, age, vitals);
+    printf("score: %.2f\n", result);
+    return 0;
+}
+float triage(int severity, int age, int vitals){
+    
+    float score = 0;
+        score = (severity * 0.5) + (age * 0.3) + (vitals * 0.2);
+        if(score > 7){
+            printf("Immediate attention required\n");
+        }
+        else if(score <= 7 && score >= 4){
+        printf("Moderate priority\n");
+        }
+        else{
+            printf("Can wait\n");
+        }
+        return score;
+}
