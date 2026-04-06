@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int stored(int userPIN);
+int main() {
+    int userPIN;
+    
+    stored(userPIN);
+        
+    return 0;
+}
+int stored(int userPIN){
+    
+    int PIN =4729;
+    int i;
+    for(i = 1; i <= 3; i++){
+        printf("Enter the debit card PIN: ");
+    scanf("%d", &userPIN);
+        if(PIN == userPIN){
+            printf("Access granted\n"); 
+            return 1;
+        }
+        else{
+            printf("Reamining %d attempt\n", 3 - i);
+        }
+    }
+    printf("Card blocked\n");
+    return 0;
+}
